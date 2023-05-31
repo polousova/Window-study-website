@@ -1,4 +1,11 @@
 /*Fonts Family*/
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #000000;
+}
+
 /*Colors*/
 /*Basic settings*/
 html {
@@ -6,12 +13,6 @@ html {
   font-size: 10px;
 }
 
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: #000000;
-}
 
 .status {
   display: block;
