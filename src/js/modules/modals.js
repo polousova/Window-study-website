@@ -6,12 +6,22 @@ const modals = () => {
             }
 
             modal.style.display = "block";
-            document.body.style.overflow = "hidden";
+            //используем встроенный класс bootstrap modal-open
+            document.body.classList.add('modal-open');
         });
 
+        //чтобы модальное окно закрывалось при клике на крестик
         close.addEventListener('click', () => {
             modal.style.display = "none";
-            document.body.style.overflow = "";
+            document.body.classList.remove('modal-open');
+        });
+
+        //чтобы модальное окно закрывалось при клике на любое место подложки (div с классом popup_engineer)
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) {
+                modal.style.display = "none";
+                document.body.classList.remove('modal-open');
+            }
         });
     }
 
