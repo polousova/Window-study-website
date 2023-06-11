@@ -1,5 +1,9 @@
 const modals = () => {
-    function bindModal (trigger, modal, close) {
+    function bindModal (triggerSelector, modalSelector, closeSelector) {
+        const trigger = document.querySelector(triggerSelector),
+            modal = document.querySelector(modalSelector),
+            close = document.querySelector(closeSelector);
+        
         trigger.addEventListener('click', (e) => {
             if(e.target) {
                 e.preventDefault;
