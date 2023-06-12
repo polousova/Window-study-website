@@ -1,6 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-        function bindModal (triggerSelector, modalSelector, closeSelector) {
+        //Modals
+        function bindModal(triggerSelector, modalSelector, closeSelector) {
             const trigger = document.querySelectorAll(triggerSelector),
                 modal = document.querySelector(modalSelector),
                 close = document.querySelector(closeSelector);
@@ -42,5 +43,53 @@ window.addEventListener('DOMContentLoaded', () => {
             }, time);
         }
 
-        showModalByTime('.popup', 3000);
+        //showModalByTime('.popup', 3000);
+
+        //Tabs
+
+        function tabs(headerSelector, tabSelector, contentSelector, activeClass) {
+            const header = document.querySelector(headerSelector),
+            tab = document.querySelectorAll(tabSelector),
+            content = document.querySelectorAll(contentSelector);
+
+            //скрываем все табы
+            function hideTabContent() {
+                content.forEach(item => {
+                    item.style.display = "none";
+                });
+
+                //убираем класс активности
+                tab.forEach(item => {
+                    item.classList.remove(activeClass);
+                });
+            }
+
+            //показываем таб i и добавляем ему класс активности
+            function showTabContent(i = 0) { //сразу передаем 0 в качестве аргумента
+                content[i].style.display = "block";
+                tab[i].classList.add(activeClass);
+            }
+
+            hideTabContent();
+            showTabContent();
+
+            //делегируем событие клик оболочке всех табов
+            header.addEventListener('click', (e) => {
+                const target = e.target;
+                //проаверяем, что пользователь кликнул либо на таб, либо на оболочку табов (parentNode)
+                if(target.classList.contains(tabSelector.replace(/\./, "")) ||
+                target.parentNode.classList.contains(tabSelector.replace(/\./, ""))) {
+                    //когда перебираемый таб станет равен тому табу, который кликнул пользователь, 
+                    //мы используем индекс i этого таба и передаем его аргументом функции
+                    tab.forEach((item, i) => {
+                        if(target == item || target.parentNode == item) {
+                            hideTabContent();
+                            showTabContent(i);
+                        }
+                    });
+                }
+            });
+
+            tabs('.glazing_slider', '.glazing_block', '.glazing_content', 'active');
+        }
 });
