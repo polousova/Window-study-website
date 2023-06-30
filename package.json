@@ -1,12 +1,12 @@
 {
   "name": "window",
   "version": "1.0.0",
-  "description": "",
+  "description": "Windows website",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Dina Polousova",
   "license": "ISC",
   "browserslist": [
     "> 1%",
@@ -27,5 +27,16 @@
   "dependencies": {
     "jquery": "^3.7.0",
     "slick-carousel": "^1.8.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polousova/Window-study-website.git"
+  },
+  "keywords": [
+    "window"
+  ],
+  "bugs": {
+    "url": "https://github.com/polousova/Window-study-website/issues"
+  },
+  "homepage": "https://github.com/polousova/Window-study-website#readme"
 }
