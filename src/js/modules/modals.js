@@ -32,6 +32,7 @@ const modals = () => {
     }
 
     bindModal('.popup_engineer_btn', '.popup_engineer', '.popup_engineer .popup_close');
+    bindModal('.popup_calc_btn', '.popup_calc', '.popup_calc_close');
 };
 
 export default modals;
